@@ -6,7 +6,10 @@ def call() {
         stages {
             stage('compile') {
                 steps {
-                    common.compile()
+                    script{
+                        common.compile()
+                    }
+
                 }
             }
             stage('unit test') {
