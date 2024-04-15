@@ -4,11 +4,9 @@ def call() {
             label 'workstation'
         }
         stages {
-            stage('Hello') {
+            stage('compile') {
                 steps {
-                    script {
-                        sh 'echo hello'
-                    }
+                    echo 'compile'
                 }
             }
         }
