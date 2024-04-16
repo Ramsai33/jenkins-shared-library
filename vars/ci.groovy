@@ -3,6 +3,7 @@ def call() {
         stage('checkout') {
             cleanws()
             git branch: 'main', url: 'https://github.com/Ramsai33/cart.git'
+            sh 'env'
         }
 
         stage('compile') {
