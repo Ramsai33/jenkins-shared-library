@@ -19,7 +19,9 @@ def call() {
             }
             stage('quality check') {
                 steps {
-                    echo 'quality check'
+                    script{
+                       sh "sonar-scanner -Dsonar.host.url=http://172.31.18.167:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.projectKey=${component}"
+                    }
                 }
             }
             stage('storing') {
