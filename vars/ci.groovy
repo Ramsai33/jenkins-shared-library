@@ -1,6 +1,6 @@
 def call() {
     node('workstation') {
-        stage('checkout'){
+        stage('checkout') {
             cleanws()
             git branch: 'main', url: 'https://github.com/Ramsai33/cart.git'
         }
