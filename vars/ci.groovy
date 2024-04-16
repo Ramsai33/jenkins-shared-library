@@ -1,8 +1,13 @@
 def call() {
     node('workstation') {
-        stage('checkout') {
+//        stage('checkout') {
+//            cleanWs()
+//            git branch: 'main', url: 'https://github.com/Ramsai33/cart.git'
+//            sh 'env'
+//        }
+        stage('Checkout') {
             cleanWs()
-            git branch: 'main', url: 'https://github.com/Ramsai33/cart.git'
+            git branch: 'main', url: "https://github.com/Ramsai33/cart.git"
             sh 'env'
         }
 
