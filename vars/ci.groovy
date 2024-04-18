@@ -3,6 +3,13 @@ def call() {
         if(!env.SONAR_EXTRA_OPTS) {
             env.SONAR_EXTRA_OPTS = " "
         }
+        if(!env.TAG_NAME) {
+            env.PUSH_CODE = "false"
+        }
+        else {
+            env.PUSH_CODE = "true"
+        }
+
 
         stage('Checkout') {
             cleanWs()
@@ -26,10 +33,13 @@ def call() {
 
             }
         }
+        if(env.PUSH_CODE == "true") {
+            stage('Package placing centralise') {
+                echo 'Package placing centralise'
+            }
 
-        stage('Package placing centralise') {
-            echo 'Package placing centralise'
         }
+
 
     }
 }
