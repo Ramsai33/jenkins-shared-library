@@ -4,3 +4,9 @@ def compile() {
     }
 }
 
+def artifactPush() {
+    if (app_lang == "nodejs") {
+        sh "zip -r cart-${TAG_NAME}.zip node_modules server.js"
+    }
+
+}

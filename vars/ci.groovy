@@ -35,7 +35,7 @@ def call() {
         }
         if(env.PUSH_CODE == "true") {
             stage('Package placing centralise') {
-                echo 'Package placing centralise'
+                common.artifactPush()
             }
 
         }
